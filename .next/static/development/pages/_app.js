@@ -485,8 +485,8 @@ var Account = function Account(_ref) {
     setAnchorEl(null);
   };
 
-  var imgSrc = "/static/user-14.jpg"; // imgSrc = "";
-
+  var imgSrc = "/static/user-14.jpg";
+  imgSrc = "";
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,

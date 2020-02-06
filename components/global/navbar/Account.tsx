@@ -53,7 +53,7 @@ const Account: React.FC<Props> = ({ auth = true }) => {
   };
 
   let imgSrc = "/static/user-14.jpg";
-  // imgSrc = "";
+  imgSrc = "";
 
   return (
     <div>

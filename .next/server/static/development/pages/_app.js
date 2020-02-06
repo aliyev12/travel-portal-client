@@ -587,8 +587,8 @@ const Account = ({
     setAnchorEl(null);
   };
 
-  let imgSrc = "/static/user-14.jpg"; // imgSrc = "";
-
+  let imgSrc = "/static/user-14.jpg";
+  imgSrc = "";
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
