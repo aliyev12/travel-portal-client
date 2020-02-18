@@ -1,17 +1,10 @@
 const withCSS = require("@zeit/next-css");
-// module.exports = withCSS({
-//   /* my next config */
-// });
+const { parsed: localEnv } = require("dotenv").config();
+const webpack = require("webpack");
 
-module.exports = {
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
-      }
-    ]
+module.exports = withCSS({
+  webpack(config) {
+    config.plugins.push(new webpack.EnvironmentPlugin(localEnv));
+    return config;
   }
-};
-// next.config.js
-module.exports = withCSS();
+});
