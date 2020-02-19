@@ -7,6 +7,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Button from "@material-ui/core/Button";
+import red from "@material-ui/core/colors/red";
 
 interface Props {
   handleExpandClick: () => void;
@@ -26,15 +27,28 @@ const useStyles = makeStyles(theme => ({
   },
   detailsBtn: {
     marginLeft: "1rem"
+  },
+  like: {},
+  liked: {
+    "& svg": {
+      color: red[500]
+    }
   }
 }));
 
 const Actions: React.FC<Props> = ({ handleExpandClick, expanded }) => {
   const classes = useStyles();
+  const [liked, setLiked] = React.useState(false);
 
   return (
     <CardActions disableSpacing>
-      <IconButton aria-label="add to favorites">
+      <IconButton
+        aria-label="add to favorites"
+        onClick={() => setLiked(l => !l)}
+        className={clsx(classes.like, {
+          [classes.liked]: liked
+        })}
+      >
         <FavoriteIcon />
       </IconButton>
       <IconButton aria-label="share">
