@@ -6,12 +6,15 @@ import IconButton from "@material-ui/core/IconButton";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Button from "@material-ui/core/Button";
 import red from "@material-ui/core/colors/red";
+import Button from "@material-ui/core/Button";
+import Link from "next/link";
+import Router from "next/router";
 
 interface Props {
   handleExpandClick: () => void;
   expanded: boolean;
+  slug: string;
 }
 
 const useStyles = makeStyles(theme => ({
@@ -33,10 +36,11 @@ const useStyles = makeStyles(theme => ({
     "& svg": {
       color: red[500]
     }
-  }
+  },
+  anchor: {}
 }));
 
-const Actions: React.FC<Props> = ({ handleExpandClick, expanded }) => {
+const Actions: React.FC<Props> = ({ handleExpandClick, expanded, slug }) => {
   const classes = useStyles();
   const [liked, setLiked] = React.useState(false);
 
@@ -55,9 +59,12 @@ const Actions: React.FC<Props> = ({ handleExpandClick, expanded }) => {
         <ShareIcon />
       </IconButton>
       <Button
+        className={classes.detailsBtn}
         variant="contained"
         color="primary"
-        className={classes.detailsBtn}
+        onClick={() => {
+          Router.push("/tour/[slug]", `/tour/${slug}`);
+        }}
       >
         Details
       </Button>

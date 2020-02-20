@@ -118,12 +118,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_Share__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_Share__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/icons/ExpandMore */ "@material-ui/icons/ExpandMore");
 /* harmony import */ var _material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/colors/red */ "@material-ui/core/colors/red");
-/* harmony import */ var _material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/colors/red */ "@material-ui/core/colors/red");
+/* harmony import */ var _material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Button */ "@material-ui/core/Button");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_10__);
 var _jsxFileName = "/Users/abdulaliyev/web-projects/travel-portal/client/components/home/Actions.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -151,14 +154,16 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["
   like: {},
   liked: {
     "& svg": {
-      color: _material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_9___default.a[500]
+      color: _material_ui_core_colors_red__WEBPACK_IMPORTED_MODULE_8___default.a[500]
     }
-  }
+  },
+  anchor: {}
 }));
 
 const Actions = ({
   handleExpandClick,
-  expanded
+  expanded,
+  slug
 }) => {
   const classes = useStyles();
   const [liked, setLiked] = react__WEBPACK_IMPORTED_MODULE_0___default.a.useState(false);
@@ -166,7 +171,7 @@ const Actions = ({
     disableSpacing: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 48
     },
     __self: undefined
   }, __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -177,35 +182,38 @@ const Actions = ({
     }),
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 49
     },
     __self: undefined
   }, __jsx(_material_ui_icons_Favorite__WEBPACK_IMPORTED_MODULE_5___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 56
     },
     __self: undefined
   })), __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_4___default.a, {
     "aria-label": "share",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 58
     },
     __self: undefined
   }, __jsx(_material_ui_icons_Share__WEBPACK_IMPORTED_MODULE_6___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 59
     },
     __self: undefined
-  })), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_8___default.a, {
+  })), __jsx(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_9___default.a, {
+    className: classes.detailsBtn,
     variant: "contained",
     color: "primary",
-    className: classes.detailsBtn,
+    onClick: () => {
+      next_router__WEBPACK_IMPORTED_MODULE_10___default.a.push("/tour/[slug]", `/tour/${slug}`);
+    },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 61
     },
     __self: undefined
   }, "Details"), __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_4___default.a, {
@@ -217,13 +225,13 @@ const Actions = ({
     "aria-label": "show more",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64
+      lineNumber: 71
     },
     __self: undefined
   }, __jsx(_material_ui_icons_ExpandMore__WEBPACK_IMPORTED_MODULE_7___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72
+      lineNumber: 79
     },
     __self: undefined
   })));
@@ -937,30 +945,32 @@ const Spotlights = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Card */ "@material-ui/core/Card");
-/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/CardMedia */ "@material-ui/core/CardMedia");
-/* harmony import */ var _material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/CardContent */ "@material-ui/core/CardContent");
-/* harmony import */ var _material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _material_ui_core_CardActionArea__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/CardActionArea */ "@material-ui/core/CardActionArea");
-/* harmony import */ var _material_ui_core_CardActionArea__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CardActionArea__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment */ "moment");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _utils_getHost__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils/getHost */ "./components/utils/getHost.ts");
-/* harmony import */ var _Spotlights__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Spotlights */ "./components/home/Spotlights.tsx");
-/* harmony import */ var _utils_styles__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/styles */ "./components/utils/styles.ts");
-/* harmony import */ var _CardCollapsible__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./CardCollapsible */ "./components/home/CardCollapsible.tsx");
-/* harmony import */ var _Difficulty__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Difficulty */ "./components/home/Difficulty.tsx");
-/* harmony import */ var _Actions__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Actions */ "./components/home/Actions.tsx");
-/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Header */ "./components/home/Header.tsx");
-/* harmony import */ var _closestDate__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./closestDate */ "./components/home/closestDate.ts");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Grid */ "@material-ui/core/Grid");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Card */ "@material-ui/core/Card");
+/* harmony import */ var _material_ui_core_Card__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/CardMedia */ "@material-ui/core/CardMedia");
+/* harmony import */ var _material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/CardContent */ "@material-ui/core/CardContent");
+/* harmony import */ var _material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_core_CardActionArea__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/CardActionArea */ "@material-ui/core/CardActionArea");
+/* harmony import */ var _material_ui_core_CardActionArea__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CardActionArea__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! moment */ "moment");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _utils_getHost__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils/getHost */ "./components/utils/getHost.ts");
+/* harmony import */ var _Spotlights__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Spotlights */ "./components/home/Spotlights.tsx");
+/* harmony import */ var _utils_styles__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../utils/styles */ "./components/utils/styles.ts");
+/* harmony import */ var _CardCollapsible__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./CardCollapsible */ "./components/home/CardCollapsible.tsx");
+/* harmony import */ var _Difficulty__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Difficulty */ "./components/home/Difficulty.tsx");
+/* harmony import */ var _Actions__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Actions */ "./components/home/Actions.tsx");
+/* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./Header */ "./components/home/Header.tsx");
+/* harmony import */ var _closestDate__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./closestDate */ "./components/home/closestDate.ts");
 var _jsxFileName = "/Users/abdulaliyev/web-projects/travel-portal/client/components/home/TourCard.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -980,7 +990,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])(theme => ({
+
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["makeStyles"])(theme => ({
   root: {
     maxWidth: "100%",
     margin: "auto",
@@ -995,12 +1006,13 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["
   },
   summary: {
     fontSize: "1rem",
-    color: _utils_styles__WEBPACK_IMPORTED_MODULE_11__["colors"].mainBlack
+    color: _utils_styles__WEBPACK_IMPORTED_MODULE_12__["colors"].mainBlack
   }
 }));
 
 const TourCard = ({
   name,
+  slug,
   price,
   createdAt,
   summary,
@@ -1022,74 +1034,77 @@ const TourCard = ({
     setExpanded(!expanded);
   };
 
-  const closestTourDate = moment__WEBPACK_IMPORTED_MODULE_8___default()(Object(_closestDate__WEBPACK_IMPORTED_MODULE_16__["default"])(startDates)).format("MMMM YYYY");
+  const closestTourDate = moment__WEBPACK_IMPORTED_MODULE_9___default()(Object(_closestDate__WEBPACK_IMPORTED_MODULE_17__["default"])(startDates)).format("MMMM YYYY");
   const place = startLocation && startLocation.description ? startLocation.description : "";
   const stops = locations ? locations.length : 0;
-  return __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  return __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2___default.a, {
     item: true,
     xs: 12,
     md: 6,
     lg: 4,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
-    },
-    __self: undefined
-  }, __jsx(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    className: classes.root,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 99
-    },
-    __self: undefined
-  }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_15__["default"], {
-    name: name,
-    createdAt: createdAt,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 100
-    },
-    __self: undefined
-  }), __jsx(_material_ui_core_CardActionArea__WEBPACK_IMPORTED_MODULE_7___default.a, {
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 101
     },
     __self: undefined
-  }, __jsx(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_4___default.a, {
-    className: classes.media,
-    image: `${Object(_utils_getHost__WEBPACK_IMPORTED_MODULE_9__["default"])()}/img/tours/${imageCover}`,
-    title: "Paella dish",
+  }, __jsx(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_4___default.a, {
+    className: classes.root,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 102
     },
     __self: undefined
-  }), __jsx(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_5___default.a, {
+  }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_16__["default"], {
+    name: name,
+    createdAt: createdAt,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 103
     },
     __self: undefined
-  }, __jsx(_Difficulty__WEBPACK_IMPORTED_MODULE_13__["default"], {
+  }), __jsx(_material_ui_core_CardActionArea__WEBPACK_IMPORTED_MODULE_8___default.a, {
+    onClick: () => {
+      next_router__WEBPACK_IMPORTED_MODULE_1___default.a.push("/tour/[slug]", `/tour/${slug}`);
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 104
+    },
+    __self: undefined
+  }, __jsx(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    className: classes.media,
+    image: `${Object(_utils_getHost__WEBPACK_IMPORTED_MODULE_10__["default"])()}/img/tours/${imageCover}`,
+    title: "Paella dish",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 109
+    },
+    __self: undefined
+  }), __jsx(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_6___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 114
+    },
+    __self: undefined
+  }, __jsx(_Difficulty__WEBPACK_IMPORTED_MODULE_14__["default"], {
     difficulty: difficulty,
     duration: duration,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 115
     },
     __self: undefined
-  }), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_6___default.a, {
+  }), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7___default.a, {
     variant: "body2",
     color: "textSecondary",
     component: "p",
     className: classes.summary,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 116
     },
     __self: undefined
-  }, summary))), __jsx(_Spotlights__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, summary))), __jsx(_Spotlights__WEBPACK_IMPORTED_MODULE_11__["default"], {
     date: closestTourDate,
     place: place,
     stops: stops,
@@ -1099,22 +1114,23 @@ const TourCard = ({
     ratingsQuantity: ratingsQuantity,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 126
     },
     __self: undefined
-  }), __jsx(_Actions__WEBPACK_IMPORTED_MODULE_14__["default"], {
+  }), __jsx(_Actions__WEBPACK_IMPORTED_MODULE_15__["default"], {
     handleExpandClick: handleExpandClick,
     expanded: expanded,
+    slug: "the-sea-explorer",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128
+      lineNumber: 135
     },
     __self: undefined
-  }), __jsx(_CardCollapsible__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }), __jsx(_CardCollapsible__WEBPACK_IMPORTED_MODULE_13__["default"], {
     expanded: expanded,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129
+      lineNumber: 140
     },
     __self: undefined
   })));
@@ -2159,6 +2175,17 @@ module.exports = require("core-js/library/fn/parse-int");
 /***/ (function(module, exports) {
 
 module.exports = require("moment");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 

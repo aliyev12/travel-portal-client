@@ -1,4 +1,5 @@
 import React from "react";
+import Router from "next/router";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -33,6 +34,7 @@ export interface Location {
 
 interface Props {
   name: string;
+  slug: string;
   price: number;
   createdAt: number;
   summary: string;
@@ -68,6 +70,7 @@ const useStyles = makeStyles(theme => ({
 
 const TourCard: React.FC<Props> = ({
   name,
+  slug,
   price,
   createdAt,
   summary,
@@ -98,7 +101,11 @@ const TourCard: React.FC<Props> = ({
     <Grid item xs={12} md={6} lg={4}>
       <Card className={classes.root}>
         <Header name={name} createdAt={createdAt} />
-        <CardActionArea>
+        <CardActionArea
+          onClick={() => {
+            Router.push("/tour/[slug]", `/tour/${slug}`);
+          }}
+        >
           <CardMedia
             className={classes.media}
             image={`${getHost()}/img/tours/${imageCover}`}
@@ -125,7 +132,11 @@ const TourCard: React.FC<Props> = ({
           ratingsAverage={ratingsAverage}
           ratingsQuantity={ratingsQuantity}
         />
-        <Actions handleExpandClick={handleExpandClick} expanded={expanded} />
+        <Actions
+          handleExpandClick={handleExpandClick}
+          expanded={expanded}
+          slug={"the-sea-explorer"}
+        />
         <CardCollapsible expanded={expanded} />
       </Card>
     </Grid>
