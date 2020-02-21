@@ -5,37 +5,45 @@ import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import TourCard from "./TourCard";
 
+export const TourFragment = gql`
+  fragment TourFragment on Tour {
+    id
+    name
+    price
+    rating
+    description
+    ratingsAverage
+    ratingsQuantity
+    duration
+    createdAt
+    maxGroupSize
+    summary
+    imageCover
+    difficulty
+    startDates
+    startLocation {
+      description
+      address
+      coordinates
+      type
+    }
+    locations {
+      _id
+      description
+      day
+      coordinates
+      type
+    }
+  }
+`;
+
 const ALL_TOURS = gql`
   query ALL_TOURS {
     getAllTours {
-      id
-      name
-      price
-      rating
-      ratingsAverage
-      ratingsQuantity
-      duration
-      createdAt
-      maxGroupSize
-      summary
-      imageCover
-      difficulty
-      startDates
-      startLocation {
-        description
-        address
-        coordinates
-        type
-      }
-      locations {
-        _id
-        description
-        day
-        coordinates
-        type
-      }
+      ...TourFragment
     }
   }
+  ${TourFragment}
 `;
 
 interface Props {}

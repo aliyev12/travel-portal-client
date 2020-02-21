@@ -41,6 +41,7 @@ interface Props {
   imageCover: string;
   duration: number;
   difficulty: string;
+  description: string;
   startDates: [string];
   startLocation: StartLocation;
   locations: [Location];
@@ -79,6 +80,7 @@ const TourCard: React.FC<Props> = ({
   duration,
   startDates,
   startLocation,
+  description,
   locations,
   maxGroupSize,
   rating,
@@ -137,7 +139,7 @@ const TourCard: React.FC<Props> = ({
           expanded={expanded}
           slug={"the-sea-explorer"}
         />
-        <CardCollapsible expanded={expanded} />
+        <CardCollapsible expanded={expanded} description={description} />
       </Card>
     </Grid>
   );
