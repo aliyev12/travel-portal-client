@@ -8,6 +8,7 @@ import TourCard from "./TourCard";
 export const TourFragment = gql`
   fragment TourFragment on Tour {
     id
+    slug
     name
     price
     rating
@@ -21,6 +22,15 @@ export const TourFragment = gql`
     imageCover
     difficulty
     startDates
+    guides {
+      id
+      role
+      name
+      email
+      photo
+      createdAt
+      updatedAt
+    }
     startLocation {
       description
       address

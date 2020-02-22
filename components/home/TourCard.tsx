@@ -11,11 +11,15 @@ import moment from "moment";
 import getHost from "../utils/getHost";
 import Spotlights from "./Spotlights";
 import { colors } from "../utils/styles";
+import { imgUrl } from "../utils/helpers";
 import CardCollapsible from "./CardCollapsible";
 import Difficulty from "./Difficulty";
 import Actions from "./Actions";
 import Header from "./Header";
 import closestDate from "./closestDate";
+
+export const closestTourDate = dates =>
+  moment(closestDate(dates)).format("MMMM YYYY");
 
 export interface StartLocation {
   description: string;
@@ -94,7 +98,6 @@ const TourCard: React.FC<Props> = ({
     setExpanded(!expanded);
   };
 
-  const closestTourDate = moment(closestDate(startDates)).format("MMMM YYYY");
   const place =
     startLocation && startLocation.description ? startLocation.description : "";
   const stops = locations ? locations.length : 0;
@@ -110,7 +113,7 @@ const TourCard: React.FC<Props> = ({
         >
           <CardMedia
             className={classes.media}
-            image={`${getHost()}/img/tours/${imageCover}`}
+            image={imgUrl("tours", imageCover)}
             title="Paella dish"
           />
           <CardContent>
@@ -126,7 +129,7 @@ const TourCard: React.FC<Props> = ({
           </CardContent>
         </CardActionArea>
         <Spotlights
-          date={closestTourDate}
+          date={closestTourDate(startDates)}
           place={place}
           stops={stops}
           people={maxGroupSize}
@@ -137,7 +140,7 @@ const TourCard: React.FC<Props> = ({
         <Actions
           handleExpandClick={handleExpandClick}
           expanded={expanded}
-          slug={"the-sea-explorer"}
+          slug={slug}
         />
         <CardCollapsible expanded={expanded} description={description} />
       </Card>

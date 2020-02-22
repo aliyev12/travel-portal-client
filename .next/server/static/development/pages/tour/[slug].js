@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -849,11 +849,12 @@ const Spotlights = ({
 /*!**************************************!*\
   !*** ./components/home/TourCard.tsx ***!
   \**************************************/
-/*! exports provided: default */
+/*! exports provided: closestTourDate, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closestTourDate", function() { return closestTourDate; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
@@ -874,9 +875,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_CardActionArea__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CardActionArea__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! moment */ "moment");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _utils_getHost__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils/getHost */ "./components/utils/getHost.ts");
-/* harmony import */ var _Spotlights__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Spotlights */ "./components/home/Spotlights.tsx");
-/* harmony import */ var _utils_styles__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../utils/styles */ "./components/utils/styles.ts");
+/* harmony import */ var _Spotlights__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Spotlights */ "./components/home/Spotlights.tsx");
+/* harmony import */ var _utils_styles__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/styles */ "./components/utils/styles.ts");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../utils/helpers */ "./components/utils/helpers.ts");
 /* harmony import */ var _CardCollapsible__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./CardCollapsible */ "./components/home/CardCollapsible.tsx");
 /* harmony import */ var _Difficulty__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./Difficulty */ "./components/home/Difficulty.tsx");
 /* harmony import */ var _Actions__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./Actions */ "./components/home/Actions.tsx");
@@ -902,6 +903,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+const closestTourDate = dates => moment__WEBPACK_IMPORTED_MODULE_9___default()(Object(_closestDate__WEBPACK_IMPORTED_MODULE_17__["default"])(dates)).format("MMMM YYYY");
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["makeStyles"])(theme => ({
   root: {
     maxWidth: "100%",
@@ -917,7 +919,7 @@ const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["
   },
   summary: {
     fontSize: "1rem",
-    color: _utils_styles__WEBPACK_IMPORTED_MODULE_12__["colors"].mainBlack
+    color: _utils_styles__WEBPACK_IMPORTED_MODULE_11__["colors"].mainBlack
   }
 }));
 
@@ -946,7 +948,6 @@ const TourCard = ({
     setExpanded(!expanded);
   };
 
-  const closestTourDate = moment__WEBPACK_IMPORTED_MODULE_9___default()(Object(_closestDate__WEBPACK_IMPORTED_MODULE_17__["default"])(startDates)).format("MMMM YYYY");
   const place = startLocation && startLocation.description ? startLocation.description : "";
   const stops = locations ? locations.length : 0;
   return __jsx(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -956,14 +957,14 @@ const TourCard = ({
     lg: 4,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 106
     },
     __self: undefined
   }, __jsx(_material_ui_core_Card__WEBPACK_IMPORTED_MODULE_4___default.a, {
     className: classes.root,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 107
     },
     __self: undefined
   }, __jsx(_Header__WEBPACK_IMPORTED_MODULE_16__["default"], {
@@ -971,7 +972,7 @@ const TourCard = ({
     createdAt: createdAt,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 108
     },
     __self: undefined
   }), __jsx(_material_ui_core_CardActionArea__WEBPACK_IMPORTED_MODULE_8___default.a, {
@@ -980,22 +981,22 @@ const TourCard = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 109
     },
     __self: undefined
   }, __jsx(_material_ui_core_CardMedia__WEBPACK_IMPORTED_MODULE_5___default.a, {
     className: classes.media,
-    image: `${Object(_utils_getHost__WEBPACK_IMPORTED_MODULE_10__["default"])()}/img/tours/${imageCover}`,
+    image: Object(_utils_helpers__WEBPACK_IMPORTED_MODULE_12__["imgUrl"])("tours", imageCover),
     title: "Paella dish",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 114
     },
     __self: undefined
   }), __jsx(_material_ui_core_CardContent__WEBPACK_IMPORTED_MODULE_6___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116
+      lineNumber: 119
     },
     __self: undefined
   }, __jsx(_Difficulty__WEBPACK_IMPORTED_MODULE_14__["default"], {
@@ -1003,7 +1004,7 @@ const TourCard = ({
     duration: duration,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117
+      lineNumber: 120
     },
     __self: undefined
   }), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -1013,11 +1014,11 @@ const TourCard = ({
     className: classes.summary,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118
+      lineNumber: 121
     },
     __self: undefined
-  }, summary))), __jsx(_Spotlights__WEBPACK_IMPORTED_MODULE_11__["default"], {
-    date: closestTourDate,
+  }, summary))), __jsx(_Spotlights__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    date: closestTourDate(startDates),
     place: place,
     stops: stops,
     people: maxGroupSize,
@@ -1026,16 +1027,16 @@ const TourCard = ({
     ratingsQuantity: ratingsQuantity,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128
+      lineNumber: 131
     },
     __self: undefined
   }), __jsx(_Actions__WEBPACK_IMPORTED_MODULE_15__["default"], {
     handleExpandClick: handleExpandClick,
     expanded: expanded,
-    slug: "the-sea-explorer",
+    slug: slug,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137
+      lineNumber: 140
     },
     __self: undefined
   }), __jsx(_CardCollapsible__WEBPACK_IMPORTED_MODULE_13__["default"], {
@@ -1043,7 +1044,7 @@ const TourCard = ({
     description: description,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142
+      lineNumber: 145
     },
     __self: undefined
   })));
@@ -1087,6 +1088,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 const TourFragment = apollo_boost__WEBPACK_IMPORTED_MODULE_5__["gql"]`
   fragment TourFragment on Tour {
     id
+    slug
     name
     price
     rating
@@ -1100,6 +1102,15 @@ const TourFragment = apollo_boost__WEBPACK_IMPORTED_MODULE_5__["gql"]`
     imageCover
     difficulty
     startDates
+    guides {
+      id
+      role
+      name
+      email
+      photo
+      createdAt
+      updatedAt
+    }
     startLocation {
       description
       address
@@ -1139,7 +1150,7 @@ const TourCards = () => {
   if (loading) return __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61
+      lineNumber: 71
     },
     __self: undefined
   }, "Loading ...");
@@ -1151,7 +1162,7 @@ const TourCards = () => {
     spacing: 3,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 76
     },
     __self: undefined
   }, getAllTours && getAllTours.length && getAllTours.map(tour => {
@@ -1160,7 +1171,7 @@ const TourCards = () => {
     }, tour, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 70
+        lineNumber: 80
       },
       __self: undefined
     }));
@@ -1231,18 +1242,69 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _SectionTitle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SectionTitle */ "./components/tour/SectionTitle.tsx");
 var _jsxFileName = "/Users/abdulaliyev/web-projects/travel-portal/client/components/tour/About.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const About = () => {
+
+
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
+  About: {
+    width: "50%",
+    margin: "5rem 0",
+    display: "flex",
+    alignItems: "center"
+  },
+  factsContainer: {
+    padding: "5rem 10rem"
+  },
+  desc: {
+    lineHeight: "2",
+    fontSize: "1.6rem"
+  }
+}));
+
+const About = ({
+  name,
+  description
+}) => {
+  const classes = useStyles();
   return __jsx("div", {
+    className: classes.About,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 47
     },
     __self: undefined
-  }, "About");
+  }, __jsx("div", {
+    className: classes.factsContainer,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
+    },
+    __self: undefined
+  }, __jsx(_SectionTitle__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    title: `ABOUT ${name.toUpperCase()}`,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: undefined
+  }), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    variant: "body1",
+    gutterBottom: true,
+    className: classes.desc,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: undefined
+  }, description)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (About);
@@ -1268,7 +1330,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_icons_AccessTimeRounded__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_AccessTimeRounded__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _material_ui_icons_PlaceRounded__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/PlaceRounded */ "@material-ui/icons/PlaceRounded");
 /* harmony import */ var _material_ui_icons_PlaceRounded__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_PlaceRounded__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _utils_getHost__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/getHost */ "./components/utils/getHost.ts");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/helpers */ "./components/utils/helpers.ts");
 /* harmony import */ var _utils_styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/styles */ "./components/utils/styles.ts");
 var _jsxFileName = "/Users/abdulaliyev/web-projects/travel-portal/client/components/tour/Cover.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -1343,31 +1405,31 @@ const Cover = ({
     className: classes.Cover,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 80
     },
     __self: undefined
   }, __jsx("div", {
     className: classes.imageCover,
     style: {
-      backgroundImage: `url("${Object(_utils_getHost__WEBPACK_IMPORTED_MODULE_5__["default"])()}/img/tours/${imageCover}")`
+      backgroundImage: `url("${Object(_utils_helpers__WEBPACK_IMPORTED_MODULE_5__["imgUrl"])("tours", imageCover)}")`
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 81
     },
     __self: undefined
   }, __jsx("div", {
     className: classes.titleContainer,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86
+      lineNumber: 87
     },
     __self: undefined
   }, __jsx("div", {
     className: classes.title,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 88
     },
     __self: undefined
   }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -1376,54 +1438,54 @@ const Cover = ({
     gutterBottom: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 89
     },
     __self: undefined
   }, name)), __jsx("div", {
     className: classes.details,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92
+      lineNumber: 93
     },
     __self: undefined
   }, __jsx("div", {
     className: classes.item,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 94
     },
     __self: undefined
   }, __jsx(_material_ui_icons_AccessTimeRounded__WEBPACK_IMPORTED_MODULE_3___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 95
     },
     __self: undefined
   }), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
     variant: "h4",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 96
     },
     __self: undefined
   }, duration, " day", duration === 1 ? "" : "s")), __jsx("div", {
     className: classes.item,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 100
     },
     __self: undefined
   }, __jsx(_material_ui_icons_PlaceRounded__WEBPACK_IMPORTED_MODULE_4___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 101
     },
     __self: undefined
   }), console.log("startLocation = ", startLocation), __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
     variant: "h4",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 103
     },
     __self: undefined
   }, startLocation.description))))));
@@ -1531,21 +1593,144 @@ const Prompt = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_icons_AccessTimeRounded__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/icons/AccessTimeRounded */ "@material-ui/icons/AccessTimeRounded");
+/* harmony import */ var _material_ui_icons_AccessTimeRounded__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_AccessTimeRounded__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_icons_FitnessCenterRounded__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/icons/FitnessCenterRounded */ "@material-ui/icons/FitnessCenterRounded");
+/* harmony import */ var _material_ui_icons_FitnessCenterRounded__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_FitnessCenterRounded__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _material_ui_icons_PeopleOutlineRounded__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/icons/PeopleOutlineRounded */ "@material-ui/icons/PeopleOutlineRounded");
+/* harmony import */ var _material_ui_icons_PeopleOutlineRounded__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_PeopleOutlineRounded__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _material_ui_icons_StarBorderRounded__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/StarBorderRounded */ "@material-ui/icons/StarBorderRounded");
+/* harmony import */ var _material_ui_icons_StarBorderRounded__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_StarBorderRounded__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _utils_styles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/styles */ "./components/utils/styles.ts");
+/* harmony import */ var _home_TourCard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../home/TourCard */ "./components/home/TourCard.tsx");
+/* harmony import */ var _SectionTitle__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./SectionTitle */ "./components/tour/SectionTitle.tsx");
 var _jsxFileName = "/Users/abdulaliyev/web-projects/travel-portal/client/components/tour/QuickFacts.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const QuickFacts = () => {
-  return __jsx("div", {
+
+
+
+
+
+
+
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
+  QuickFacts: {
+    margin: "5rem 0"
+  },
+  factsContainer: {},
+  factItem: {
+    display: "flex",
+    alignItems: "center",
+    marginBottom: "1.5rem",
+    "&:last-child": {
+      marginBottom: "0"
+    }
+  },
+  icon: {
+    marginRight: "1rem",
+    "& svg": {
+      color: _utils_styles__WEBPACK_IMPORTED_MODULE_6__["colors"].mainBlue,
+      width: "2.5rem",
+      height: "2.5rem"
+    }
+  },
+  heading: {
+    marginRight: "2rem",
+    fontSize: "1.6rem",
+    fontWeight: "bold"
+  },
+  info: {
+    fontSize: "1.6rem",
+    textTransform: "capitalize"
+  }
+}));
+
+const QuickFacts = ({
+  startDates,
+  difficulty,
+  people,
+  rating
+}) => {
+  const classes = useStyles(); // const place =
+  //   startLocation && startLocation.description ? startLocation.description : "";
+
+  const factItems = (Icon, heading, info) => __jsx("div", {
+    className: classes.factItem,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 65
     },
     __self: undefined
-  }, "QuickFacts");
+  }, __jsx("div", {
+    className: classes.icon,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: undefined
+  }, __jsx(Icon, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
+    },
+    __self: undefined
+  })), __jsx("div", {
+    className: classes.heading,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: undefined
+  }, heading), __jsx("div", {
+    className: classes.info,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: undefined
+  }, info));
+
+  return __jsx("div", {
+    className: classes.QuickFacts,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: classes.factsContainer,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76
+    },
+    __self: undefined
+  }, __jsx(_SectionTitle__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    title: "QUICK FACTS",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77
+    },
+    __self: undefined
+  }), factItems(_material_ui_icons_AccessTimeRounded__WEBPACK_IMPORTED_MODULE_2___default.a, "NEXT DATE", Object(_home_TourCard__WEBPACK_IMPORTED_MODULE_7__["closestTourDate"])(startDates)), factItems(_material_ui_icons_FitnessCenterRounded__WEBPACK_IMPORTED_MODULE_3___default.a, "DIFFICULTY", difficulty), factItems(_material_ui_icons_PeopleOutlineRounded__WEBPACK_IMPORTED_MODULE_4___default.a, "PARTICIPANTS", `${people} ${people === 1 ? "person" : "people"}`), factItems(_material_ui_icons_StarBorderRounded__WEBPACK_IMPORTED_MODULE_5___default.a, "RATING", `${rating} / 5`)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (QuickFacts);
+/*
+stopped at building fact items...
+
+NEXT DATE
+June 2021
+DIFFICULTY
+Medium
+PARTICIPANTS
+15 People
+RATING
+4.8 / 5
+*/
 
 /***/ }),
 
@@ -1575,6 +1760,53 @@ const Reviews = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Reviews);
+
+/***/ }),
+
+/***/ "./components/tour/SectionTitle.tsx":
+/*!******************************************!*\
+  !*** ./components/tour/SectionTitle.tsx ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/abdulaliyev/web-projects/travel-portal/client/components/tour/SectionTitle.tsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
+  SectionTitle: {
+    marginBottom: "3rem",
+    textAlign: "center"
+  }
+}));
+
+const SectionTitle = ({
+  title
+}) => {
+  const classes = useStyles();
+  return __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    variant: "h3",
+    gutterBottom: true,
+    className: classes.SectionTitle,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  }, title);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SectionTitle);
 
 /***/ }),
 
@@ -1630,10 +1862,15 @@ const TOUR = apollo_boost__WEBPACK_IMPORTED_MODULE_2__["gql"]`
 const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__["makeStyles"])(theme => ({
   Tour: {},
   infoSection: {
-    display: "flex"
+    display: "flex",
+    minHeight: "30rem"
   },
   factsAndGuides: {
-    display: "flex"
+    display: "flex",
+    width: "50%",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
   }
 }));
 
@@ -1654,7 +1891,7 @@ const Tour = ({
   if (loading) return __jsx("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 48
     },
     __self: undefined
   }, "Loading ...");
@@ -1665,6 +1902,7 @@ const Tour = ({
       price,
       createdAt,
       summary,
+      guides,
       imageCover,
       difficulty,
       duration,
@@ -1681,7 +1919,7 @@ const Tour = ({
       className: classes.Tour,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65
+        lineNumber: 71
       },
       __self: undefined
     }, __jsx(_Cover__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -1691,63 +1929,70 @@ const Tour = ({
       startLocation: startLocation,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66
+        lineNumber: 72
       },
       __self: undefined
     }), __jsx("div", {
       className: classes.infoSection,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 78
       },
       __self: undefined
     }, __jsx("div", {
       className: classes.factsAndGuides,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73
-      },
-      __self: undefined
-    }, __jsx(_QuickFacts__WEBPACK_IMPORTED_MODULE_6__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 74
-      },
-      __self: undefined
-    }), __jsx(_TourGuides__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 75
-      },
-      __self: undefined
-    })), __jsx(_About__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 77
-      },
-      __self: undefined
-    })), __jsx(_Images__WEBPACK_IMPORTED_MODULE_9__["default"], {
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 79
       },
       __self: undefined
-    }), __jsx(_Map__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    }, __jsx(_QuickFacts__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      startDates: startDates,
+      difficulty: difficulty,
+      people: maxGroupSize,
+      rating: ratingsAverage,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 80
       },
       __self: undefined
+    }), __jsx(_TourGuides__WEBPACK_IMPORTED_MODULE_7__["default"], {
+      guides: guides,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 86
+      },
+      __self: undefined
+    })), __jsx(_About__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      name: name,
+      description: description,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 88
+      },
+      __self: undefined
+    })), __jsx(_Images__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 90
+      },
+      __self: undefined
+    }), __jsx(_Map__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 91
+      },
+      __self: undefined
     }), __jsx(_Reviews__WEBPACK_IMPORTED_MODULE_11__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 81
+        lineNumber: 92
       },
       __self: undefined
     }), __jsx(_Prompt__WEBPACK_IMPORTED_MODULE_12__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 82
+        lineNumber: 93
       },
       __self: undefined
     }));
@@ -1767,23 +2012,262 @@ const Tour = ({
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/array/is-array */ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Typography */ "@material-ui/core/Typography");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _utils_styles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../utils/styles */ "./components/utils/styles.ts");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/helpers */ "./components/utils/helpers.ts");
+/* harmony import */ var _SectionTitle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./SectionTitle */ "./components/tour/SectionTitle.tsx");
+/* harmony import */ var _material_ui_core_List__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/List */ "@material-ui/core/List");
+/* harmony import */ var _material_ui_core_List__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_List__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/ListItem */ "@material-ui/core/ListItem");
+/* harmony import */ var _material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Divider */ "@material-ui/core/Divider");
+/* harmony import */ var _material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/ListItemText */ "@material-ui/core/ListItemText");
+/* harmony import */ var _material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _material_ui_core_ListItemAvatar__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/ListItemAvatar */ "@material-ui/core/ListItemAvatar");
+/* harmony import */ var _material_ui_core_ListItemAvatar__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_ListItemAvatar__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/Avatar */ "@material-ui/core/Avatar");
+/* harmony import */ var _material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_12__);
+
 var _jsxFileName = "/Users/abdulaliyev/web-projects/travel-portal/client/components/tour/TourGuides.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
-const TourGuides = () => {
+
+
+
+
+
+
+
+
+
+
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__["makeStyles"])(theme => ({
+  TourGuides: {
+    margin: "5rem 0"
+  },
+  factsContainer: {},
+  factItem: {
+    display: "flex",
+    alignItems: "center",
+    marginBottom: "1.5rem",
+    "&:last-child": {
+      marginBottom: "0"
+    }
+  },
+  icon: {
+    marginRight: "1rem",
+    "& svg": {
+      color: _utils_styles__WEBPACK_IMPORTED_MODULE_4__["colors"].mainBlue,
+      width: "2.5rem",
+      height: "2.5rem"
+    }
+  },
+  heading: {
+    marginRight: "2rem",
+    fontSize: "1.6rem",
+    fontWeight: "bold"
+  },
+  info: {
+    fontSize: "1.6rem",
+    textTransform: "capitalize"
+  },
+  root: {
+    width: "100%",
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper
+  },
+  inline: {
+    display: "inline"
+  }
+}));
+
+const TourGuides = ({
+  guides
+}) => {
+  const classes = useStyles();
+  console.log("guides = ", guides); // "photo": "user-12.jpg",
+  // const place =
+  //   startLocation && startLocation.description ? startLocation.description : "";
+  // const factItems = (Icon, heading, info) => (
+  //   <div className={classes.factItem}>
+  //     <div className={classes.icon}>
+  //       <Icon />
+  //     </div>
+  //     <div className={classes.heading}>{heading}</div>
+  //     <div className={classes.info}>{info}</div>
+  //   </div>
+  // );
+
   return __jsx("div", {
+    className: classes.TourGuides,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 96
     },
     __self: undefined
-  }, "TourGuides");
+  }, __jsx("div", {
+    className: classes.factsContainer,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 97
+    },
+    __self: undefined
+  }, __jsx(_SectionTitle__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    title: "YOUR TOUR GUIDES",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 98
+    },
+    __self: undefined
+  }), __jsx(_material_ui_core_List__WEBPACK_IMPORTED_MODULE_7___default.a, {
+    className: classes.root,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 99
+    },
+    __self: undefined
+  }, guides && _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_0___default()(guides) ? guides.map((guide, i) => {
+    return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
+      key: guide.id,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 103
+      },
+      __self: undefined
+    }, __jsx(_material_ui_core_ListItem__WEBPACK_IMPORTED_MODULE_8___default.a, {
+      alignItems: "flex-start",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 104
+      },
+      __self: undefined
+    }, __jsx(_material_ui_core_ListItemAvatar__WEBPACK_IMPORTED_MODULE_11___default.a, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 105
+      },
+      __self: undefined
+    }, __jsx(_material_ui_core_Avatar__WEBPACK_IMPORTED_MODULE_12___default.a, {
+      alt: guide.name,
+      src: Object(_utils_helpers__WEBPACK_IMPORTED_MODULE_5__["imgUrl"])("users", guide.photo),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 106
+      },
+      __self: undefined
+    })), __jsx(_material_ui_core_ListItemText__WEBPACK_IMPORTED_MODULE_10___default.a, {
+      primary: Object(_utils_helpers__WEBPACK_IMPORTED_MODULE_5__["parseRole"])(guide.role),
+      secondary: __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 114
+        },
+        __self: undefined
+      }, __jsx(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        component: "span",
+        variant: "body2",
+        className: classes.inline,
+        color: "textPrimary",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 115
+        },
+        __self: undefined
+      }, guide.name)),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 111
+      },
+      __self: undefined
+    })), i < guides.length - 1 && __jsx(_material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_9___default.a, {
+      variant: "inset",
+      component: "li",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 129
+      },
+      __self: undefined
+    }));
+  }) : null)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (TourGuides);
+{
+  /* <ListItem alignItems="flex-start">
+  <ListItemAvatar>
+  <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+  </ListItemAvatar>
+  <ListItemText
+  primary={parseRole()}
+  secondary={
+    <React.Fragment>
+      <Typography
+        component="span"
+        variant="body2"
+        className={classes.inline}
+        color="textPrimary"
+      >
+        Ali Connors
+      </Typography>
+      {" — I'll be in your neighborhood doing errands this…"}
+    </React.Fragment>
+  }
+  />
+  </ListItem>
+  <Divider variant="inset" component="li" />
+  <ListItem alignItems="flex-start">
+  <ListItemAvatar>
+  <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+  </ListItemAvatar>
+  <ListItemText
+  primary="Summer BBQ"
+  secondary={
+    <React.Fragment>
+      <Typography
+        component="span"
+        variant="body2"
+        className={classes.inline}
+        color="textPrimary"
+      >
+        to Scott, Alex, Jennifer
+      </Typography>
+      {" — Wish I could come, but I'm out of town this…"}
+    </React.Fragment>
+  }
+  />
+  </ListItem>
+  <Divider variant="inset" component="li" />
+  <ListItem alignItems="flex-start">
+  <ListItemAvatar>
+  <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+  </ListItemAvatar>
+  <ListItemText
+  primary="Oui Oui"
+  secondary={
+    <React.Fragment>
+      <Typography
+        component="span"
+        variant="body2"
+        className={classes.inline}
+        color="textPrimary"
+      >
+        Sandra Adams
+      </Typography>
+      {" — Do you have Paris recommendations? Have you ever…"}
+    </React.Fragment>
+  }
+  />
+  </ListItem> */
+}
 
 /***/ }),
 
@@ -1926,6 +2410,30 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./components/utils/helpers.ts":
+/*!*************************************!*\
+  !*** ./components/utils/helpers.ts ***!
+  \*************************************/
+/*! exports provided: parseRole, imgUrl */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parseRole", function() { return parseRole; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "imgUrl", function() { return imgUrl; });
+/* harmony import */ var _getHost__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getHost */ "./components/utils/getHost.ts");
+
+const ROLES = {
+  user: "Regular User",
+  guide: "Tour Guide",
+  lead_guide: "Lead Guide",
+  admin: "Admin User"
+};
+const parseRole = role => ROLES[role];
+const imgUrl = (type, name) => `${Object(_getHost__WEBPACK_IMPORTED_MODULE_0__["default"])()}/img/${type}/${name}`;
+
+/***/ }),
+
 /***/ "./components/utils/styles.ts":
 /*!************************************!*\
   !*** ./components/utils/styles.ts ***!
@@ -1953,6 +2461,17 @@ const colors = {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/array/from */ "core-js/library/fn/array/from");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/array/is-array */ "core-js/library/fn/array/is-array");
 
 /***/ }),
 
@@ -2061,7 +2580,7 @@ const TourPage = () => {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!*************************************!*\
   !*** multi ./pages/tour/[slug].tsx ***!
   \*************************************/
@@ -2194,6 +2713,17 @@ module.exports = require("@material-ui/core/Collapse");
 
 /***/ }),
 
+/***/ "@material-ui/core/Divider":
+/*!********************************************!*\
+  !*** external "@material-ui/core/Divider" ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/Divider");
+
+/***/ }),
+
 /***/ "@material-ui/core/Grid":
 /*!*****************************************!*\
   !*** external "@material-ui/core/Grid" ***!
@@ -2213,6 +2743,50 @@ module.exports = require("@material-ui/core/Grid");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/IconButton");
+
+/***/ }),
+
+/***/ "@material-ui/core/List":
+/*!*****************************************!*\
+  !*** external "@material-ui/core/List" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/List");
+
+/***/ }),
+
+/***/ "@material-ui/core/ListItem":
+/*!*********************************************!*\
+  !*** external "@material-ui/core/ListItem" ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/ListItem");
+
+/***/ }),
+
+/***/ "@material-ui/core/ListItemAvatar":
+/*!***************************************************!*\
+  !*** external "@material-ui/core/ListItemAvatar" ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/ListItemAvatar");
+
+/***/ }),
+
+/***/ "@material-ui/core/ListItemText":
+/*!*************************************************!*\
+  !*** external "@material-ui/core/ListItemText" ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/ListItemText");
 
 /***/ }),
 
@@ -2579,6 +3153,17 @@ module.exports = require("@material-ui/icons/Share");
 
 /***/ }),
 
+/***/ "@material-ui/icons/StarBorderRounded":
+/*!*******************************************************!*\
+  !*** external "@material-ui/icons/StarBorderRounded" ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/StarBorderRounded");
+
+/***/ }),
+
 /***/ "@material-ui/lab/Rating":
 /*!******************************************!*\
   !*** external "@material-ui/lab/Rating" ***!
@@ -2620,6 +3205,17 @@ module.exports = require("clsx");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/array/from");
+
+/***/ }),
+
+/***/ "core-js/library/fn/array/is-array":
+/*!****************************************************!*\
+  !*** external "core-js/library/fn/array/is-array" ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/array/is-array");
 
 /***/ }),
 

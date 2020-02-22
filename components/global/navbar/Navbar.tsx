@@ -2,7 +2,7 @@ import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import Link from "@material-ui/core/Link";
-
+import NextLink from "next/link";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
@@ -120,21 +120,23 @@ const Navbar: React.FC<Props> = () => {
       className={classes.appBar}
     >
       <Toolbar className={classes.toolbar}>
-        <Link
-          variant="button"
-          color="textPrimary"
-          href="#"
-          className={classes.toolbarTitle}
-        >
-          <Logo title="Globe with airplace flying" />
-          <Typography variant="h4" color="inherit" noWrap>
-            Travel Portal
-          </Typography>
-        </Link>
+        <NextLink href="/">
+          <Link
+            variant="button"
+            color="textPrimary"
+            href="#"
+            className={classes.toolbarTitle}
+          >
+            <Logo title="Globe with airplace flying" />
+            <Typography variant="h4" color="inherit" noWrap>
+              Travel Portal
+            </Typography>
+          </Link>
+        </NextLink>
         <Links auth={auth} />
         <div className={classes.search}>
           <div className={classes.searchIcon}>
-            <SearchIcon />
+            <SearchIcon width="20" />
           </div>
           <InputBase
             placeholder="Search…"

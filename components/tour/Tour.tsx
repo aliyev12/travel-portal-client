@@ -28,10 +28,15 @@ const TOUR = gql`
 const useStyles = makeStyles(theme => ({
   Tour: {},
   infoSection: {
-    display: "flex"
+    display: "flex",
+    minHeight: "30rem"
   },
   factsAndGuides: {
-    display: "flex"
+    display: "flex",
+    width: "50%",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
   }
 }));
 
@@ -48,6 +53,7 @@ const Tour: React.FC<Props> = ({ slug }) => {
       price,
       createdAt,
       summary,
+      guides,
       imageCover,
       difficulty,
       duration,
@@ -71,10 +77,15 @@ const Tour: React.FC<Props> = ({ slug }) => {
         />
         <div className={classes.infoSection}>
           <div className={classes.factsAndGuides}>
-            <QuickFacts />
-            <TourGuides />
+            <QuickFacts
+              startDates={startDates}
+              difficulty={difficulty}
+              people={maxGroupSize}
+              rating={ratingsAverage}
+            />
+            <TourGuides guides={guides} />
           </div>
-          <About />
+          <About name={name} description={description} />
         </div>
         <Images />
         <Map />

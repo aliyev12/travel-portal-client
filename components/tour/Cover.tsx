@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import TimeIcon from "@material-ui/icons/AccessTimeRounded";
 import PlaceIcon from "@material-ui/icons/PlaceRounded";
 import getHost from "../utils/getHost";
+import { imgUrl } from "../utils/helpers";
 import { colors } from "../utils/styles";
 import { StartLocation } from "../home/TourCard";
 
@@ -80,7 +81,7 @@ const Cover: React.FC<Props> = ({
       <div
         className={classes.imageCover}
         style={{
-          backgroundImage: `url("${getHost()}/img/tours/${imageCover}")`
+          backgroundImage: `url("${imgUrl("tours", imageCover)}")`
         }}
       >
         <div className={classes.titleContainer}>
