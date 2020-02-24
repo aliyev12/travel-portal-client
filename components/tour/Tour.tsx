@@ -11,6 +11,7 @@ import Images from "./Images";
 import Map from "./Map";
 import Reviews from "./Reviews";
 import Prompt from "./Prompt";
+import Loader from "../common/Loader";
 
 interface Props {
   slug: string | string[];
@@ -43,15 +44,15 @@ const useStyles = makeStyles(theme => ({
 const Tour: React.FC<Props> = ({ slug }) => {
   const { loading, error, data } = useQuery(TOUR, { variables: { slug } });
   const classes = useStyles();
-  console.log("Toud data = ", data);
 
-  if (loading) return <p>Loading ...</p>;
+  if (loading) return <Loader />;
 
   if (data && data.getTour) {
     const {
       name,
       price,
       createdAt,
+      images,
       summary,
       guides,
       imageCover,
@@ -87,10 +88,10 @@ const Tour: React.FC<Props> = ({ slug }) => {
           </div>
           <About name={name} description={description} />
         </div>
-        <Images />
-        <Map />
-        <Reviews />
-        <Prompt />
+        <Images images={images} />
+        {/* <Map /> */}
+        {/* <Reviews /> */}
+        {/* <Prompt /> */}
       </main>
     );
   }

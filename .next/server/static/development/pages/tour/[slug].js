@@ -93,6 +93,58 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/common/Loader.tsx":
+/*!**************************************!*\
+  !*** ./components/common/Loader.tsx ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CircularIndeterminate; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/CircularProgress */ "@material-ui/core/CircularProgress");
+/* harmony import */ var _material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/abdulaliyev/web-projects/travel-portal/client/components/common/Loader.tsx";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__["makeStyles"])(theme => ({
+  root: {
+    display: "flex",
+    minHeight: "20rem",
+    justifyContent: "center",
+    alignItems: "center",
+    "& > * + *": {
+      marginLeft: theme.spacing(2)
+    }
+  }
+}));
+function CircularIndeterminate() {
+  const classes = useStyles();
+  return __jsx("div", {
+    className: classes.root,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: this
+  }, __jsx(_material_ui_core_CircularProgress__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }));
+}
+
+/***/ }),
+
 /***/ "./components/home/Actions.tsx":
 /*!*************************************!*\
   !*** ./components/home/Actions.tsx ***!
@@ -1076,9 +1128,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var apollo_boost__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! apollo-boost */ "apollo-boost");
 /* harmony import */ var apollo_boost__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(apollo_boost__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _TourCard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./TourCard */ "./components/home/TourCard.tsx");
+/* harmony import */ var _common_Loader__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../common/Loader */ "./components/common/Loader.tsx");
 
 var _jsxFileName = "/Users/abdulaliyev/web-projects/travel-portal/client/components/home/TourCards.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -1097,6 +1151,7 @@ const TourFragment = apollo_boost__WEBPACK_IMPORTED_MODULE_5__["gql"]`
     ratingsQuantity
     duration
     createdAt
+    images
     maxGroupSize
     summary
     imageCover
@@ -1147,13 +1202,13 @@ const TourCards = () => {
     data
   } = Object(_apollo_react_hooks__WEBPACK_IMPORTED_MODULE_4__["useQuery"])(ALL_TOURS);
   const classes = useStyles();
-  if (loading) return __jsx("p", {
+  if (loading) return __jsx(_common_Loader__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71
+      lineNumber: 73
     },
     __self: undefined
-  }, "Loading ...");
+  });
   const {
     getAllTours
   } = data;
@@ -1162,7 +1217,7 @@ const TourCards = () => {
     spacing: 3,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 78
     },
     __self: undefined
   }, getAllTours && getAllTours.length && getAllTours.map(tour => {
@@ -1171,7 +1226,7 @@ const TourCards = () => {
     }, tour, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
+        lineNumber: 82
       },
       __self: undefined
     }));
@@ -1504,81 +1559,251 @@ const Cover = ({
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/define-properties */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptors */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "./node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/array/is-array */ "./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js");
+/* harmony import */ var _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var react_slick__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-slick */ "react-slick");
+/* harmony import */ var react_slick__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_slick__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var react_image__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-image */ "react-image");
+/* harmony import */ var react_image__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(react_image__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _material_ui_icons_PauseRounded__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/icons/PauseRounded */ "@material-ui/icons/PauseRounded");
+/* harmony import */ var _material_ui_icons_PauseRounded__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_PauseRounded__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _material_ui_icons_PlayArrowRounded__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material-ui/icons/PlayArrowRounded */ "@material-ui/icons/PlayArrowRounded");
+/* harmony import */ var _material_ui_icons_PlayArrowRounded__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_material_ui_icons_PlayArrowRounded__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @material-ui/core/IconButton */ "@material-ui/core/IconButton");
+/* harmony import */ var _material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../utils/helpers */ "./components/utils/helpers.ts");
+/* harmony import */ var slick_carousel_slick_slick_css__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! slick-carousel/slick/slick.css */ "./node_modules/slick-carousel/slick/slick.css");
+/* harmony import */ var slick_carousel_slick_slick_css__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(slick_carousel_slick_slick_css__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var slick_carousel_slick_slick_theme_css__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! slick-carousel/slick/slick-theme.css */ "./node_modules/slick-carousel/slick/slick-theme.css");
+/* harmony import */ var slick_carousel_slick_slick_theme_css__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(slick_carousel_slick_slick_theme_css__WEBPACK_IMPORTED_MODULE_18__);
+
+
+
+
+
+
+
+
+
 var _jsxFileName = "/Users/abdulaliyev/web-projects/travel-portal/client/components/tour/Images.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_9___default.a.createElement;
+
+function ownKeys(object, enumerableOnly) { var keys = _babel_runtime_corejs2_core_js_object_keys__WEBPACK_IMPORTED_MODULE_5___default()(object); if (_babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default.a) { var symbols = _babel_runtime_corejs2_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_4___default()(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_8__["default"])(target, key, source[key]); }); } else if (_babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default.a) { _babel_runtime_corejs2_core_js_object_define_properties__WEBPACK_IMPORTED_MODULE_1___default()(target, _babel_runtime_corejs2_core_js_object_get_own_property_descriptors__WEBPACK_IMPORTED_MODULE_2___default()(source)); } else { ownKeys(Object(source)).forEach(function (key) { _babel_runtime_corejs2_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(target, key, _babel_runtime_corejs2_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_3___default()(source, key)); }); } } return target; }
 
 
-const Images = () => {
+
+
+
+
+
+
+
+
+
+
+function NextArrow(props) {
+  const {
+    className,
+    style,
+    onClick
+  } = props;
   return __jsx("div", {
+    className: className,
+    style: _objectSpread({}, style, {
+      display: "block",
+      color: "#333"
+    }),
+    onClick: onClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 19
+    },
+    __self: this
+  });
+}
+
+function PrevArrow(props) {
+  const {
+    className,
+    style,
+    onClick
+  } = props;
+  return __jsx("div", {
+    className: className,
+    style: _objectSpread({}, style, {
+      display: "block",
+      color: "#333"
+    }),
+    onClick: onClick,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: this
+  });
+}
+
+const sliderSettings = {
+  dots: true,
+  infinite: true,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  speed: 500,
+  slidesToShow: 1,
+  pauseOnHover: true,
+  pauseOnFocus: true,
+  nextArrow: __jsx(NextArrow, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
     },
     __self: undefined
-  }, "Images");
+  }),
+  prevArrow: __jsx(PrevArrow, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: undefined
+  })
+};
+const useStyles = Object(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_11__["makeStyles"])(theme => ({
+  Images: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "5rem 0",
+    width: "100%"
+  },
+  sliderContainer: {
+    // height: "500px",
+    width: "500px"
+  },
+  image: {
+    width: "100%" // height: "200px"
+
+  }
+}));
+
+const Images = ({
+  images
+}) => {
+  const [playing, setPlaying] = react__WEBPACK_IMPORTED_MODULE_9___default.a.useState(true);
+  const [slickImages, setSlickImages] = react__WEBPACK_IMPORTED_MODULE_9___default.a.useState([]);
+  const classes = useStyles();
+  let slider;
+  react__WEBPACK_IMPORTED_MODULE_9___default.a.useEffect(() => {
+    const imagesArr = [];
+
+    if (images && images.length && _babel_runtime_corejs2_core_js_array_is_array__WEBPACK_IMPORTED_MODULE_7___default()(images)) {
+      images.forEach(img => {
+        imagesArr.push(__jsx("div", {
+          key: img,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 82
+          },
+          __self: undefined
+        }, __jsx(react_image__WEBPACK_IMPORTED_MODULE_12___default.a, {
+          src: Object(_utils_helpers__WEBPACK_IMPORTED_MODULE_16__["imgUrl"])("tours", img),
+          alt: img,
+          className: classes.image,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 83
+          },
+          __self: undefined
+        })));
+      });
+    }
+
+    setSlickImages(imagesArr);
+  }, [images]);
+
+  const play = () => slider.slickPlay();
+
+  const pause = () => slider.slickPause();
+
+  return __jsx("div", {
+    className: classes.Images,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 99
+    },
+    __self: undefined
+  }, __jsx("div", {
+    className: classes.sliderContainer,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100
+    },
+    __self: undefined
+  }, __jsx(react_slick__WEBPACK_IMPORTED_MODULE_10___default.a, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_6__["default"])({
+    ref: sl => slider = sl
+  }, sliderSettings, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 101
+    },
+    __self: undefined
+  }), slickImages && slickImages.length ? slickImages : __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 102
+    },
+    __self: undefined
+  })), __jsx(_material_ui_core_IconButton__WEBPACK_IMPORTED_MODULE_15___default.a, {
+    "aria-label": "pause or play",
+    className: "play-pause-btn",
+    title: playing ? `Pause slide show` : `Play slide show`,
+    onClick: () => {
+      playing ? pause() : play();
+      setPlaying(oldPlaying => !oldPlaying);
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 113
+    },
+    __self: undefined
+  }, playing ? __jsx(_material_ui_icons_PauseRounded__WEBPACK_IMPORTED_MODULE_13___default.a, {
+    fontSize: "large",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 123
+    },
+    __self: undefined
+  }) : __jsx(_material_ui_icons_PlayArrowRounded__WEBPACK_IMPORTED_MODULE_14___default.a, {
+    fontSize: "large",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 125
+    },
+    __self: undefined
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Images);
-
-/***/ }),
-
-/***/ "./components/tour/Map.tsx":
-/*!*********************************!*\
-  !*** ./components/tour/Map.tsx ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/abdulaliyev/web-projects/travel-portal/client/components/tour/Map.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-const Map = () => {
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: undefined
-  }, "Map");
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Map);
-
-/***/ }),
-
-/***/ "./components/tour/Prompt.tsx":
-/*!************************************!*\
-  !*** ./components/tour/Prompt.tsx ***!
-  \************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/abdulaliyev/web-projects/travel-portal/client/components/tour/Prompt.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-const Prompt = () => {
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: undefined
-  }, "Prompt");
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Prompt);
 
 /***/ }),
 
@@ -1734,35 +1959,6 @@ RATING
 
 /***/ }),
 
-/***/ "./components/tour/Reviews.tsx":
-/*!*************************************!*\
-  !*** ./components/tour/Reviews.tsx ***!
-  \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _jsxFileName = "/Users/abdulaliyev/web-projects/travel-portal/client/components/tour/Reviews.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-const Reviews = () => {
-  return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: undefined
-  }, "Reviews");
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Reviews);
-
-/***/ }),
-
 /***/ "./components/tour/SectionTitle.tsx":
 /*!******************************************!*\
   !*** ./components/tour/SectionTitle.tsx ***!
@@ -1833,13 +2029,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TourGuides__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./TourGuides */ "./components/tour/TourGuides.tsx");
 /* harmony import */ var _About__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./About */ "./components/tour/About.tsx");
 /* harmony import */ var _Images__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Images */ "./components/tour/Images.tsx");
-/* harmony import */ var _Map__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Map */ "./components/tour/Map.tsx");
-/* harmony import */ var _Reviews__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Reviews */ "./components/tour/Reviews.tsx");
-/* harmony import */ var _Prompt__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./Prompt */ "./components/tour/Prompt.tsx");
+/* harmony import */ var _common_Loader__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../common/Loader */ "./components/common/Loader.tsx");
 var _jsxFileName = "/Users/abdulaliyev/web-projects/travel-portal/client/components/tour/Tour.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
 
 
 
@@ -1887,20 +2079,20 @@ const Tour = ({
     }
   });
   const classes = useStyles();
-  console.log("Toud data = ", data);
-  if (loading) return __jsx("p", {
+  if (loading) return __jsx(_common_Loader__WEBPACK_IMPORTED_MODULE_10__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 48
     },
     __self: undefined
-  }, "Loading ...");
+  });
 
   if (data && data.getTour) {
     const {
       name,
       price,
       createdAt,
+      images,
       summary,
       guides,
       imageCover,
@@ -1919,7 +2111,7 @@ const Tour = ({
       className: classes.Tour,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 71
+        lineNumber: 72
       },
       __self: undefined
     }, __jsx(_Cover__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -1929,21 +2121,21 @@ const Tour = ({
       startLocation: startLocation,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 72
+        lineNumber: 73
       },
       __self: undefined
     }), __jsx("div", {
       className: classes.infoSection,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 78
+        lineNumber: 79
       },
       __self: undefined
     }, __jsx("div", {
       className: classes.factsAndGuides,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79
+        lineNumber: 80
       },
       __self: undefined
     }, __jsx(_QuickFacts__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -1953,14 +2145,14 @@ const Tour = ({
       rating: ratingsAverage,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
+        lineNumber: 81
       },
       __self: undefined
     }), __jsx(_TourGuides__WEBPACK_IMPORTED_MODULE_7__["default"], {
       guides: guides,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86
+        lineNumber: 87
       },
       __self: undefined
     })), __jsx(_About__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -1968,31 +2160,14 @@ const Tour = ({
       description: description,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 88
+        lineNumber: 89
       },
       __self: undefined
     })), __jsx(_Images__WEBPACK_IMPORTED_MODULE_9__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 90
-      },
-      __self: undefined
-    }), __jsx(_Map__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      images: images,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 91
-      },
-      __self: undefined
-    }), __jsx(_Reviews__WEBPACK_IMPORTED_MODULE_11__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 92
-      },
-      __self: undefined
-    }), __jsx(_Prompt__WEBPACK_IMPORTED_MODULE_12__["default"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 93
       },
       __self: undefined
     }));
@@ -2497,6 +2672,72 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/assign */ "co
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/define-properties.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/define-properties */ "core-js/library/fn/object/define-properties");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/define-property */ "core-js/library/fn/object/define-property");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-descriptor */ "core-js/library/fn/object/get-own-property-descriptor");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptors.js ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-descriptors */ "core-js/library/fn/object/get-own-property-descriptors");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-symbols */ "core-js/library/fn/object/get-own-property-symbols");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/keys.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/keys */ "core-js/library/fn/object/keys");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/parse-int.js":
 /*!******************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/parse-int.js ***!
@@ -2505,6 +2746,36 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/assign */ "co
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/parse-int */ "core-js/library/fn/parse-int");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+/* harmony import */ var _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0__);
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    _core_js_object_define_property__WEBPACK_IMPORTED_MODULE_0___default()(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
 
 /***/ }),
 
@@ -2538,6 +2809,28 @@ function _extends() {
 
   return _extends.apply(this, arguments);
 }
+
+/***/ }),
+
+/***/ "./node_modules/slick-carousel/slick/slick-theme.css":
+/*!***********************************************************!*\
+  !*** ./node_modules/slick-carousel/slick/slick-theme.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./node_modules/slick-carousel/slick/slick.css":
+/*!*****************************************************!*\
+  !*** ./node_modules/slick-carousel/slick/slick.css ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
 
 /***/ }),
 
@@ -2699,6 +2992,17 @@ module.exports = require("@material-ui/core/CardHeader");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/core/CardMedia");
+
+/***/ }),
+
+/***/ "@material-ui/core/CircularProgress":
+/*!*****************************************************!*\
+  !*** external "@material-ui/core/CircularProgress" ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/core/CircularProgress");
 
 /***/ }),
 
@@ -3109,6 +3413,17 @@ module.exports = require("@material-ui/icons/MoreVert");
 
 /***/ }),
 
+/***/ "@material-ui/icons/PauseRounded":
+/*!**************************************************!*\
+  !*** external "@material-ui/icons/PauseRounded" ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/PauseRounded");
+
+/***/ }),
+
 /***/ "@material-ui/icons/PeopleOutlineRounded":
 /*!**********************************************************!*\
   !*** external "@material-ui/icons/PeopleOutlineRounded" ***!
@@ -3139,6 +3454,17 @@ module.exports = require("@material-ui/icons/Place");
 /***/ (function(module, exports) {
 
 module.exports = require("@material-ui/icons/PlaceRounded");
+
+/***/ }),
+
+/***/ "@material-ui/icons/PlayArrowRounded":
+/*!******************************************************!*\
+  !*** external "@material-ui/icons/PlayArrowRounded" ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("@material-ui/icons/PlayArrowRounded");
 
 /***/ }),
 
@@ -3241,6 +3567,72 @@ module.exports = require("core-js/library/fn/object/assign");
 
 /***/ }),
 
+/***/ "core-js/library/fn/object/define-properties":
+/*!**************************************************************!*\
+  !*** external "core-js/library/fn/object/define-properties" ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/define-properties");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/define-property":
+/*!************************************************************!*\
+  !*** external "core-js/library/fn/object/define-property" ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/define-property");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/get-own-property-descriptor":
+/*!************************************************************************!*\
+  !*** external "core-js/library/fn/object/get-own-property-descriptor" ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/get-own-property-descriptor");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/get-own-property-descriptors":
+/*!*************************************************************************!*\
+  !*** external "core-js/library/fn/object/get-own-property-descriptors" ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/get-own-property-descriptors");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/get-own-property-symbols":
+/*!*********************************************************************!*\
+  !*** external "core-js/library/fn/object/get-own-property-symbols" ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/get-own-property-symbols");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/keys":
+/*!*************************************************!*\
+  !*** external "core-js/library/fn/object/keys" ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/keys");
+
+/***/ }),
+
 /***/ "core-js/library/fn/parse-int":
 /*!***********************************************!*\
   !*** external "core-js/library/fn/parse-int" ***!
@@ -3282,6 +3674,28 @@ module.exports = require("next/router");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-image":
+/*!******************************!*\
+  !*** external "react-image" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-image");
+
+/***/ }),
+
+/***/ "react-slick":
+/*!******************************!*\
+  !*** external "react-slick" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-slick");
 
 /***/ })
 

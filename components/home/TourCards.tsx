@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import TourCard from "./TourCard";
+import Loader from "../common/Loader";
 
 export const TourFragment = gql`
   fragment TourFragment on Tour {
@@ -17,6 +18,7 @@ export const TourFragment = gql`
     ratingsQuantity
     duration
     createdAt
+    images
     maxGroupSize
     summary
     imageCover
@@ -68,7 +70,7 @@ const TourCards: React.FC<Props> = () => {
   const { loading, error, data } = useQuery(ALL_TOURS);
   const classes = useStyles();
 
-  if (loading) return <p>Loading ...</p>;
+  if (loading) return <Loader />;
 
   const { getAllTours } = data;
 
