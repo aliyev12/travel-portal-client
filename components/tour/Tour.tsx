@@ -89,7 +89,7 @@ const Tour: React.FC<Props> = ({ slug }) => {
           <About name={name} description={description} />
         </div>
         <Images images={images} />
-        {/* <Map /> */}
+        <Map />
         {/* <Reviews /> */}
         {/* <Prompt /> */}
       </main>

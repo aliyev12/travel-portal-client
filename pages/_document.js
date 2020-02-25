@@ -9,7 +9,12 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <link
+            href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
