@@ -10,4 +10,6 @@ const ROLES = {
 export const parseRole = (role: string): string => ROLES[role];
 
 export const imgUrl = (type: string, name: string): string =>
-  `${getHost()}/img/${type}/${name}`;
+  `https://yourtravelportal.herokuapp.com/img/${type}/${name}`;
+// export const imgUrl = (type: string, name: string): string =>
+//   `${getHost()}/img/${type}/${name}`;
